@@ -1,0 +1,6 @@
+/* Navbar / Sidebar */
+nav {
+    height: 100vh;
+    width: inherit;
+    position: fixed;
+}
