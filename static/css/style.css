@@ -1,3 +1,6 @@
+/* Global */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 /* Navbar / Sidebar */
 nav {
     height: 100vh;
@@ -5,7 +8,7 @@ nav {
     position: fixed;
 }
 
-.nav-pills .nav-link .active,
+.nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
     background-color: #ff4000;
 }
@@ -15,12 +18,16 @@ nav {
 }
 
 .sidebar-icon {
-    font-size: 30px;
+    font-size: 25px;
     padding: 0.2rem 0.4rem;
     border-radius: 25%;
 }
 
-@media screen and (max-width: 500px) {
+#brand {
+    font-family: Pacifico, sans-serif;
+}
+
+@media screen and (max-width: 520px) {
     #brand {
         font-size: 100% !important;
     }

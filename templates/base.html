@@ -116,13 +116,9 @@
 
                 <!-- Page Content -->
                 <main class="col">
-                    <div class="row justify-content-center">
-                        <div class="col-6 text-center">
-                            {% for i in p %}
-                            <h1>scroll test</h1>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    {% block content %}
+                    <!-- Content Goes Here -->
+                    {% endblock content %}
                 </main>
             </div>
         </div>
