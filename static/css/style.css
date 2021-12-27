@@ -1,5 +1,10 @@
 /* Global */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;300;400&display=swap");
+
+* {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
 
 /* Navbar / Sidebar */
 nav {
@@ -23,12 +28,29 @@ nav {
     border-radius: 25%;
 }
 
-#brand {
+.brand {
     font-family: Pacifico, sans-serif;
 }
 
 @media screen and (max-width: 520px) {
-    #brand {
+    .brand {
         font-size: 100% !important;
     }
+}
+
+/* Home Page */
+#heading {
+    font-size: 200%;
+    font-weight: 300;
+}
+
+.post {
+    width: 50%;
+    height: 15rem;
+    background-color: grey;
+}
+
+.post-preview {
+    height: 45px;
+    overflow: hidden;
 }
