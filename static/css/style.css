@@ -4,3 +4,24 @@ nav {
     width: inherit;
     position: fixed;
 }
+
+.nav-pills .nav-link .active,
+.nav-pills .show > .nav-link {
+    background-color: #ff4000;
+}
+
+.active {
+    background-color: #ff4000;
+}
+
+.sidebar-icon {
+    font-size: 30px;
+    padding: 0.2rem 0.4rem;
+    border-radius: 25%;
+}
+
+@media screen and (max-width: 500px) {
+    #brand {
+        font-size: 100% !important;
+    }
+}

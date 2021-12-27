@@ -9,4 +9,5 @@ def home(request):
 
     return render(request, 'index.html', {
         'p': range(100),
+        'home_page': 'active',
     })

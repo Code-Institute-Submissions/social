@@ -46,28 +46,68 @@
                                 text-white text-decoration-none
                             "
                         >
-                            <span class="fs-4">Social</span>
+                            <span id="brand" class="fs-2">Social</span>
                         </a>
                         <hr />
-                        <ul class="nav nav-pills flex-column mb-auto">
+                        <ul
+                            class="
+                                nav nav-pills
+                                flex-column
+                                mb-auto
+                                text-center text-md-start
+                            "
+                        >
                             <li class="nav-item">
                                 <a
                                     href="#"
-                                    class="nav-link active"
+                                    class="fs-5 mb-3 nav-link text-white d-none d-md-block {{ home_page }}"
                                     aria-current="page"
                                 >
                                     Home
                                 </a>
+                                <a
+                                    href="#"
+                                    class="text-white d-md-none {{ home_page }} sidebar-icon"
+                                    ><i class="fas fa-home mb-5"></i
+                                ></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link text-white"
+                                <a
+                                    href="#"
+                                    class="fs-5 mb-3 nav-link text-white d-none d-md-block {{ login_page }} "
                                     >Log In</a
                                 >
+                                <a
+                                    href="#"
+                                    class="text-white  d-md-none {{ login_page }}"
+                                    ><i
+                                        class="
+                                            fas
+                                            fa-sign-in-alt
+                                            mb-5
+                                            sidebar-icon
+                                        "
+                                    ></i
+                                ></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link text-white"
+                                <a
+                                    href="#"
+                                    class="fs-5 nav-link text-white d-none d-md-block {{ register_page }}"
                                     >Register</a
                                 >
+                                <a
+                                    href="#"
+                                    class="text-white  d-md-none {{ register_page }}"
+                                    ><i
+                                        class="
+                                            fas
+                                            fa-user-plus
+                                            mb-5
+                                            sidebar-icon
+                                        "
+                                    ></i
+                                ></a>
                             </li>
                         </ul>
                         <hr />
