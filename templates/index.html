@@ -9,18 +9,26 @@
 
 <!-- Post Component -->
 <div class="row justify-content-center">
-    <div class="col-10 col-xl-6 post text-white">
+    <div class="col-10 col-xxl-6 post text-white">
         <div class="row">
-            <div class="col mt-2"><h2>Post Title</h2></div>
+            <!-- Title -->
+            <div class="row">
+                <div class="col mt-2 d-flex align-items-baseline">
+                    <h2>Post Title</h2>
+                    <span class="fst-italic ms-2">Date</span>
+                </div>
+            </div>
 
+            <!-- Username/Category -->
             <div class="row mt-2 mb-3">
-                <div class="d-flex justify-content-start col-sm-2 col-3">
+                <div class="d-flex col-sm-2 col-3">
                     <span class="username fst-italic me-2">Username</span>
-                    <span><i class="fas fa-circle"></i></span>
+                    <span><i class="align-middle fas fa-circle"></i></span>
                     <span class="fst-italic ms-2">Category</span>
                 </div>
             </div>
 
+            <!-- Content -->
             <div class="row">
                 <div class="col post-preview mb-3">
                     <p>{% lorem 50 w %}</p>
@@ -28,6 +36,7 @@
             </div>
             <hr />
 
+            <!-- Additional -->
             <div class="row">
                 <div class="col text-center mt-2">
                     <button type="button" class="btn btn-warning">
