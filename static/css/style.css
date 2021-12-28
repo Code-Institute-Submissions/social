@@ -4,6 +4,7 @@
 * {
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
 /* Navbar / Sidebar */
@@ -45,12 +46,21 @@ nav {
 }
 
 .post {
-    width: 50%;
     height: 15rem;
-    background-color: grey;
+    background-color: #212529;
+    border-radius: 10px;
 }
 
 .post-preview {
     height: 45px;
     overflow: hidden;
+}
+
+.btn-warning {
+    background-color: #ff4000;
+    border: none;
+}
+
+.fa-circle {
+    font-size: 40%;
 }
