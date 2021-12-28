@@ -11,41 +11,55 @@
 <div class="row justify-content-center">
     <div class="col-10 col-xxl-6 post text-white">
         <div class="row">
-            <!-- Title -->
-            <div class="row">
-                <div class="col mt-2 d-flex align-items-baseline">
-                    <h2>Post Title</h2>
-                    <span class="fst-italic ms-2">Date</span>
+            {% if test_var %}
+            <!-- prettier-ignore -->
+            <div class="col-9">
+            {% else %}
+            <div class="col">
+            {% endif %}
+                <!-- Title -->
+                <div class="row">
+                    <div class="col mt-2 d-flex align-items-baseline">
+                        <h2>Post Title</h2>
+                        <span class="fst-italic ms-2">Date</span>
+                    </div>
+                </div>
+
+                <!-- Username/Category -->
+                <div class="row mt-2 mb-3">
+                    <div class="d-flex col-sm-2 col-3">
+                        <span class="username fst-italic me-2">Username</span>
+                        <span><i class="align-middle fas fa-circle"></i></span>
+                        <span class="fst-italic ms-2">Category</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="row">
+                    <div class="col post-preview mb-3">
+                        <p>{% lorem 50 w %}</p>
+                    </div>
+                </div>
+                <hr />
+
+                <!-- Additional -->
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-warning">
+                            See More
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Username/Category -->
-            <div class="row mt-2 mb-3">
-                <div class="d-flex col-sm-2 col-3">
-                    <span class="username fst-italic me-2">Username</span>
-                    <span><i class="align-middle fas fa-circle"></i></span>
-                    <span class="fst-italic ms-2">Category</span>
-                </div>
+            {% if test_var %}
+            <div class="col d-flex justify-content-center align-items-center">
+                <div id="placeholder">Image</div>
             </div>
-
-            <!-- Content -->
-            <div class="row">
-                <div class="col post-preview mb-3">
-                    <p>{% lorem 50 w %}</p>
-                </div>
-            </div>
-            <hr />
-
-            <!-- Additional -->
-            <div class="row">
-                <div class="col text-center mt-2">
-                    <button type="button" class="btn btn-warning">
-                        See More
-                    </button>
-                </div>
-            </div>
+            {% endif %}
         </div>
-    </div>
+        </div>
 
-    {% endblock %}
+        {% endblock %}
+    </div>
 </div>
