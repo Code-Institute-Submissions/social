@@ -65,8 +65,9 @@ nav {
     font-size: 40%;
 }
 
-#placeholder {
+.preview-img {
     height: 110px;
     width: 110px;
-    background: #ff4000;
+    border-radius: 10px;
+    border: 1px solid #fff;
 }

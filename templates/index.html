@@ -9,7 +9,7 @@
 </div>
 
 {% for post in posts %} 
-    {% if test_var %}
+    {% if post.image %}
         <!-- Post Component -->
         <div class="row justify-content-center mb-2">
             <div class="col-10 col-xxl-6 post text-white">
@@ -18,24 +18,24 @@
                         <!-- Title -->
                         <div class="row">
                             <div class="col mt-2 d-flex align-items-baseline">
-                                <h2>Post Title</h2>
-                                <span class="fst-italic ms-2">Date</span>
+                                <h2>{{ post.title }}</h2>
+                                <span class="fst-italic ms-2">{{ post.post_date }}</span>
                             </div>
                         </div>
 
                         <!-- Username/Category -->
                         <div class="row mt-2 mb-3">
                             <div class="d-flex col-sm-2 col-3">
-                                <span class="username fst-italic me-2">Username</span>
+                                <span class="username fst-italic me-2">{{ post.author }}</span>
                                 <span><i class="align-middle fas fa-circle"></i></span>
-                                <span class="fst-italic ms-2">Category</span>
+                                <span class="fst-italic ms-2">{{ post.category }}</span>
                             </div>
                         </div>
 
                         <!-- Content -->
                         <div class="row">
                             <div class="col post-preview mb-3">
-                                <p>{% lorem 50 w %}</p>
+                                <p>{{ post.content | safe}}</p>
                             </div>
                         </div>
                         <hr />
@@ -52,7 +52,7 @@
 
                     <!-- Image -->
                     <div class="col d-flex justify-content-center align-items-center">
-                        <div id="placeholder">Image</div>
+                        <img class="preview-img" src="{{ post.image.url }}" alt="post image">
                     </div>
                 </div>
             </div>
@@ -66,24 +66,24 @@
                         <!-- Title -->
                         <div class="row">
                             <div class="col mt-2 d-flex align-items-baseline">
-                                <h2>Post Title</h2>
-                                <span class="fst-italic ms-2">Date</span>
+                                <h2>{{ post.title }}</h2>
+                                <span class="fst-italic ms-2">{{ post.post_date }}</span>
                             </div>
                         </div>
 
                         <!-- Username/Category -->
                         <div class="row mt-2 mb-3">
                             <div class="d-flex col-sm-2 col-3">
-                                <span class="username fst-italic me-2">Username</span>
+                                <span class="username fst-italic me-2">{{ post.author }}</span>
                                 <span><i class="align-middle fas fa-circle"></i></span>
-                                <span class="fst-italic ms-2">Category</span>
+                                <span class="fst-italic ms-2">{{ post.category }}</span>
                             </div>
                         </div>
 
                         <!-- Content -->
                         <div class="row">
                             <div class="col post-preview mb-3">
-                                <p>{% lorem 50 w %}</p>
+                                <p>{{ post.content | safe}}</p>
                             </div>
                         </div>
                         <hr />

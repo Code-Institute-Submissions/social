@@ -7,8 +7,10 @@ from .models import Post
 
 def home(request):
 
+    queryset = Post.objects.order_by('-post_date')
+
     return render(request, 'index.html', {
-        'p': range(100),
+        'posts': queryset,
         'home_page': 'active',
         'test_var': True,
     })
