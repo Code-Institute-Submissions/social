@@ -92,6 +92,7 @@ nav {
     max-width: 200px;
     border-radius: 10px;
     border: 1px solid #fff;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 845px) {
@@ -115,4 +116,10 @@ nav {
     .title {
         font-size: 110%;
     }
+}
+
+@media screen and (max-width: 550px) {
+    .preview-img {
+        width: 100%;
+    }    
 }
