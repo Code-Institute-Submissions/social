@@ -33,6 +33,23 @@ nav {
     font-family: Pacifico, sans-serif;
 }
 
+#nav-toggle {
+    background: none;
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    #nav-collapse {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #nav-collapse {
+        display: block !important;
+    }
+}
+
 @media screen and (max-width: 520px) {
     .brand {
         font-size: 100% !important;
