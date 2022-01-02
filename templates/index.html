@@ -1,5 +1,4 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <!-- Heading -->
 <div class="row justify-content-center">
@@ -8,47 +7,116 @@
     </div>
 </div>
 
-{% for post in posts %} 
-    {% if post.image %}
-        <!-- Post Component -->
-        <div class="row justify-content-center mb-2">
-            <div class="col-10 col-xxl-8 post text-white">
+{% for post in posts %} {% if post.image %}
+<!-- Post Component -->
+<div class="row justify-content-center mb-2">
+    <div class="col-10 col-xxl-8 post text-white">
+        <div class="row">
+            <div class="col col-md-9">
+                <!-- Title -->
                 <div class="row">
-                    <div class="col col-md-9">
-                        <!-- Title -->
-                        <div class="row">
-                            <div class="col mt-2 d-flex align-items-baseline">
-                                <h2 class="title">{{ post.title }}</h2>
-                            </div>
-                        </div>
-
-                        <!-- Date -->
-                        <div class="row">
-                            <div class="col mt-1">
-                                <span class="fst-italic date">{{ post.post_date }}</span>
-                            </div>
-                        </div>
-
-                        <!-- Username/Category -->
-                        <div class="row mt-2 mb-1">
-                            <div class="d-flex col-sm-2 col-3">
-                                <span class="username fst-italic me-2">{{ post.author }}</span>
-                                <span><i class="align-middle fas fa-circle"></i></span>
-                                <span class="category fst-italic ms-2">{{ post.category }}</span>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="row">
-                            <div class="col post-preview mb-1">
-                                <p>{{ post.content | safe}}</p>
-                            </div>
-                        </div>
+                    <div class="col mt-2 d-flex align-items-baseline">
+                        <h2 class="title">{{ post.title }}</h2>
                     </div>
+                </div>
 
-                    <!-- Image -->
-                    <div class="col d-none d-md-flex justify-content-center align-items-center">
-                        <img class="preview-img" src="{{ post.image.url }}" alt="post image">
+                <!-- Date -->
+                <div class="row">
+                    <div class="col mt-1">
+                        <span class="fst-italic date"
+                            >{{ post.post_date }}</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Username/Category -->
+                <div class="row mt-2 mb-1">
+                    <div class="d-flex col-sm-2 col-3">
+                        <span class="username fst-italic me-2"
+                            >{{ post.author }}</span
+                        >
+                        <span><i class="align-middle fas fa-circle"></i></span>
+                        <span class="category fst-italic ms-2"
+                            >{{ post.category }}</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="row">
+                    <div class="col post-preview mb-1">
+                        <p>{{ post.content | safe}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div
+                class="
+                    col
+                    d-none d-md-flex
+                    justify-content-center
+                    align-items-center
+                "
+            >
+                <img
+                    class="preview-img"
+                    src="{{ post.image.url }}"
+                    alt="post image"
+                />
+            </div>
+        </div>
+        <hr />
+
+        <!-- Additional -->
+        <div class="row">
+            <div class="col text-center">
+                <button type="button" class="btn btn-warning mb-2">
+                    See More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="row justify-content-center mb-2">
+    <div class="col-10 col-xxl-8 post text-white">
+        <div class="row">
+            <div class="col">
+                <!-- Title -->
+                <div class="row">
+                    <div class="col mt-2 d-flex align-items-baseline">
+                        <h2 class="title">{{ post.title }}</h2>
+                    </div>
+                </div>
+
+                <!-- Date -->
+                <div class="row">
+                    <div class="col mt-1">
+                        <span class="fst-italic date"
+                            >{{ post.post_date }}</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Username/Category -->
+                <div class="row mt-2 mb-1">
+                    <div class="d-flex col-sm-2 col-3">
+                        <span class="username fst-italic me-2"
+                            >{{ post.author }}</span
+                        >
+                        <span><i class="align-middle fas fa-circle"></i></span>
+                        <span class="category fst-italic ms-2"
+                            >{{ post.category }}</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="row">
+                    <div class="col post-preview mb-1">
+                        <p>{{ post.content | safe}}</p>
                     </div>
                 </div>
                 <hr />
@@ -63,55 +131,6 @@
                 </div>
             </div>
         </div>
-
-    {% else %}
-        <div class="row justify-content-center mb-2">
-            <div class="col-10 col-xxl-8 post text-white">
-                <div class="row">
-                    <div class="col">
-                        <!-- Title -->
-                        <div class="row">
-                            <div class="col mt-2 d-flex align-items-baseline">
-                                <h2 class="title">{{ post.title }}</h2>
-                            </div>
-                        </div>
-
-                        <!-- Date -->
-                        <div class="row">
-                            <div class="col mt-1">
-                                <span class="fst-italic date">{{ post.post_date }}</span>
-                            </div>
-                        </div>
-
-                        <!-- Username/Category -->
-                        <div class="row mt-2 mb-1">
-                            <div class="d-flex col-sm-2 col-3">
-                                <span class="username fst-italic me-2">{{ post.author }}</span>
-                                <span><i class="align-middle fas fa-circle"></i></span>
-                                <span class="category fst-italic ms-2">{{ post.category }}</span>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="row">
-                            <div class="col post-preview mb-1">
-                                <p>{{ post.content | safe}}</p>
-                            </div>
-                        </div>
-                        <hr />
-
-                        <!-- Additional -->
-                        <div class="row">
-                            <div class="col text-center">
-                                <button type="button" class="btn btn-warning mb-2">
-                                    See More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
-{% endfor %} 
-{% endblock %}
+    </div>
+</div>
+{% endif %} {% endfor %} {% endblock %}
