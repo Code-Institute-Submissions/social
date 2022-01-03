@@ -10,7 +10,7 @@
 {% for post in posts %} {% if post.image %}
 <!-- Post Component -->
 <div class="row justify-content-center mb-2">
-    <div class="col-10 col-xxl-8 post text-white">
+    <div class="col-10 col-xl-7 post text-white">
         <div class="row">
             <div class="col-7 col-md-9">
                 <!-- Title -->
@@ -51,14 +51,7 @@
             </div>
 
             <!-- Image -->
-            <div
-                class="
-                    col
-                    d-flex
-                    justify-content-center
-                    align-items-end
-                "
-            >
+            <div class="col d-flex justify-content-center align-items-end">
                 <img
                     class="preview-img"
                     src="{{ post.image.url }}"
@@ -81,7 +74,7 @@
 
 {% else %}
 <div class="row justify-content-center mb-2">
-    <div class="col-10 col-xxl-8 post text-white">
+    <div class="col-10 col-xl-7 post text-white">
         <div class="row">
             <div class="col">
                 <!-- Title -->
