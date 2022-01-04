@@ -1,16 +1,13 @@
-from django import http
-from django.db.models import query
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import View
 from .models import Post
 
+class Home(View):
 
-def home(request):
+    def get(self, request):
+        posts = Post.objects.order_by("-post_date")
 
-    queryset = Post.objects.order_by('-post_date')
-
-    return render(request, 'index.html', {
-        'posts': queryset,
-        'home_page': 'active',
-        'test_var': True,
-    })
+        return render(request, 'index.html', {
+            'posts': posts,
+            'home_page': 'active'
+        })
