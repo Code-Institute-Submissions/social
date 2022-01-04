@@ -127,6 +127,16 @@ nav {
     object-fit: cover;
 }
 
+.page-link {
+    background-color: #212529;
+    color: #fff;
+}
+
+.page-link:hover {
+    background-color: #ff4000;
+    color: #000;
+}
+
 @media screen and (max-width: 845px) {
     .preview-img {
         width: 95px;
