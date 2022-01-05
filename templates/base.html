@@ -32,7 +32,7 @@
                     >
                         <!-- Brand -->
                         <a
-                            href="/"
+                            href="{% url 'home' %}"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white justify-content-center"
                         >
                             <span class="brand fs-2">Social</span>
@@ -46,14 +46,14 @@
                             <!-- Home -->
                             <li class="nav-item">
                                 <a
-                                    href="#"
+                                    href="{% url 'home' %}"
                                     class="fs-5 mb-3 nav-link text-white d-none d-md-block {{ home_page }}"
                                     aria-current="page"
                                 >
                                     Home
                                 </a>
                                 <a
-                                    href="#"
+                                    href="{% url 'home' %}"
                                     class="text-white d-md-none {{ home_page }} sidebar-icon"
                                     ><i class="fas fa-home p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6">Home</h3></a

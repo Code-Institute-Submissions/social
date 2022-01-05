@@ -7,10 +7,11 @@
     box-sizing: border-box;
 }
 
-a {
+a, a:hover {
     text-decoration: none;
     color: inherit;
 }
+
 
 /* Navbar / Sidebar */
 nav {
@@ -144,6 +145,10 @@ nav {
 .page-link:hover {
     background-color: #ff4000;
     color: #000;
+}
+
+.title:hover {
+    color: #ff4000;
 }
 
 @media screen and (max-width: 845px) {
