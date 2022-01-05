@@ -114,6 +114,10 @@ nav {
     border: none;
 }
 
+.btn-warning:hover {
+    background-color: #ff5500;
+}
+
 .fa-circle {
     font-size: 40%;
 }
