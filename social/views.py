@@ -1,4 +1,3 @@
-from django.core import paginator
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import View
@@ -17,4 +16,14 @@ class Home(View):
         return render(request, 'index.html', {
             'page_obj': page_obj,
             'home_page': 'active'
+        })
+
+
+class PostView(View):
+
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+
+        return render(request, 'post_view.html', {
+            'test': post.title
         })

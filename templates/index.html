@@ -10,7 +10,9 @@
                 <!-- Title -->
                 <div class="row">
                     <div class="col mt-2 d-flex align-items-baseline">
-                        <h2 class="title">{{ post.title }}</h2>
+                        <a href="{% url 'post_detail' post.slug %}">
+                            <h2 class="title">{{ post.title }}</h2>
+                        </a>
                     </div>
                 </div>
 
@@ -74,7 +76,9 @@
                 <!-- Title -->
                 <div class="row">
                     <div class="col mt-2 d-flex align-items-baseline">
-                        <h2 class="title">{{ post.title }}</h2>
+                        <a href="{% url 'post_detail' post.slug %}">
+                            <h2 class="title">{{ post.title }}</h2>
+                        </a>
                     </div>
                 </div>
 
