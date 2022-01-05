@@ -1,15 +1,9 @@
 {% extends "base.html" %} {% block content %}
 
-<!-- Heading -->
-<div class="row justify-content-center">
-    <div class="col-6 text-center m-3">
-        <h1 id="heading">Welcome to <span class="brand">Social</span></h1>
-    </div>
-</div>
-
+<!-- prettier-ignore -->
 {% for post in page_obj %} {% if post.image %}
 <!-- Post Component -->
-<div class="row justify-content-md-center mb-2 post-container">
+<div class="row justify-content-center mb-2 post-container">
     <div class="col-11 col-xl-7 post text-white">
         <div class="row">
             <div class="col-7 col-md-9">
@@ -73,7 +67,7 @@
 </div>
 
 {% else %}
-<div class="row justify-content-md-center mb-2 post-container">
+<div class="row justify-content-center mb-2 post-container">
     <div class="col-11 col-xl-7 post text-white">
         <div class="row">
             <div class="col">
