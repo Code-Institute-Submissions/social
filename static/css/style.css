@@ -96,6 +96,10 @@ nav {
     .brand {
         font-size: 100% !important;
     }
+
+    .icon-text {
+        font-size: 70% !important;
+    }
 }
 
 /* Home Page */
@@ -178,4 +182,10 @@ nav {
     .preview-img {
         width: 100%;
     }
+}
+
+/* Post View Page */
+.post-detail {
+    height: 500px;
+    background-color: #212529;
 }

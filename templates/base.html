@@ -23,9 +23,9 @@
     </head>
 
     <body>
-        <div class="container-fluid ps-0">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-2" id="nav-collapse">
+                <div class="col-2 p-0" id="nav-collapse">
                     <!-- Navbar / Sidebar -->
                     <nav
                         class="d-flex flex-column flex-shrink-0 p-1 p-md-3 text-white bg-dark"
@@ -35,7 +35,7 @@
                             href="{% url 'home' %}"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white justify-content-center"
                         >
-                            <span class="brand fs-2">Social</span>
+                            <span class="brand fs-2 pt-2 pt-md-0">Social</span>
                         </a>
                         <hr />
 
@@ -56,7 +56,7 @@
                                     href="{% url 'home' %}"
                                     class="text-white d-md-none {{ home_page }} sidebar-icon"
                                     ><i class="fas fa-home p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6">Home</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Home</h3></a
                                 >
                             </li>
 
@@ -71,7 +71,7 @@
                                     href="#"
                                     class="text-white d-md-none {{ login_page }} sidebar-icon"
                                     ><i class="fas fa-sign-in-alt p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6">Log In</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Log In</h3></a
                                 >
                             </li>
 
@@ -86,7 +86,7 @@
                                     href="#"
                                     class="text-white d-md-none {{ register_page }} sidebar-icon"
                                     ><i class="fas fa-user-plus p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6">Register</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Register</h3></a
                                 >
                             </li>
                         </ul>
@@ -97,8 +97,8 @@
                
                 <main class="col">
                     <!-- Nav Toggle -->
-                    <div class="row">
-                        <div class="col mb-0">
+                    <div class="row g-0">
+                        <div class="col mb-0 g-0">
                             <button
                                 id="nav-toggle"
                                 type="button"
