@@ -14,7 +14,7 @@ a:hover {
 }
 
 main {
-    min-width: none;
+    min-width: 0;
 }
 
 /* Navbar / Sidebar */
