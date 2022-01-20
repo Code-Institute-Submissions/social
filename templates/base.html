@@ -48,7 +48,6 @@
                                 <a
                                     href="{% url 'home' %}"
                                     class="fs-5 mb-3 nav-link d-none d-md-block {{ home_page }}"
-                                    aria-current="page"
                                 >
                                     Home
                                 </a>
@@ -56,45 +55,75 @@
                                     href="{% url 'home' %}"
                                     class="d-md-none {{ home_page }} sidebar-icon"
                                     ><i class="fas fa-home p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Home</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">
+                                        Home
+                                    </h3></a
                                 >
                             </li>
 
+                            {% if user.is_authenticated %}
+                            <!-- Logout -->
+                            <li>
+                                <a
+                                    href="{% url 'account_logout' %}"
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ logout_page }}"
+                                >
+                                    Logout
+                                </a>
+                                <a
+                                    href="{% url 'account_logout' %}"
+                                    class="d-md-none {{ logout_page }} sidebar-icon"
+                                >
+                                    <i class="fas fa-sign-out-alt p-2"></i>
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">
+                                        Logout
+                                    </h3>
+                                </a>
+                            </li>
+
+                            {% else %}
                             <!-- Log In -->
                             <li>
                                 <a
-                                    href="#"
+                                    href="{% url 'account_login' %}"
                                     class="fs-5 mb-3 nav-link d-none d-md-block {{ login_page }} "
                                     >Log In</a
                                 >
                                 <a
-                                    href="#"
+                                    href="{% url 'account_login' %}"
                                     class="d-md-none {{ login_page }} sidebar-icon"
                                     ><i class="fas fa-sign-in-alt p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Log In</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">
+                                        Log In
+                                    </h3></a
                                 >
                             </li>
 
                             <!-- Register -->
                             <li>
                                 <a
-                                    href="#"
+                                    href="{% url 'account_signup' %}"
                                     class="fs-5 nav-link d-none d-md-block {{ register_page }}"
                                     >Register</a
                                 >
                                 <a
-                                    href="#"
+                                    href="{% url 'account_signup' %}"
                                     class="d-md-none {{ register_page }} sidebar-icon"
                                     ><i class="fas fa-user-plus p-2"></i>
-                                    <h3 class="mb-5 mt-1 fs-6 icon-text">Register</h3></a
+                                    <h3 class="mb-5 mt-1 fs-6 icon-text">
+                                        Register
+                                    </h3></a
                                 >
                             </li>
+                            {% endif %}
                         </ul>
+                        {% if user.is_authenticated %}
+                        <span id="welcome">Welcome, {{ user.username }}</span>
+                        {% endif %}
                         <hr />
                     </nav>
                 </div>
 
-               
                 <main class="col">
                     <!-- Nav Toggle -->
                     <div class="row g-0">

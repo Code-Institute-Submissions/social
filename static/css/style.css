@@ -31,6 +31,12 @@ nav {
     background-color: #ff4000;
 }
 
+@media screen and (max-width: 520px) {
+    #welcome {
+        font-size: 75%;
+    }
+}
+
 /* Underline From Left - Credit to Ian Lunn - https://ianlunn.github.io/Hover/ */
 .nav-link {
     display: inline-block;
