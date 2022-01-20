@@ -5,12 +5,13 @@
     font-family: Roboto, sans-serif;
     font-weight: 400;
     box-sizing: border-box;
+    color: #fff;
 }
 
 a,
 a:hover {
     text-decoration: none;
-    color: inherit;
+    color: inherit !important;
 }
 
 main {

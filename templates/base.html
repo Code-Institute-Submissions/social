@@ -28,12 +28,12 @@
                 <div class="col-2 p-0" id="nav-collapse">
                     <!-- Navbar / Sidebar -->
                     <nav
-                        class="d-flex flex-column flex-shrink-0 p-1 p-md-3 text-white bg-dark"
+                        class="d-flex flex-column flex-shrink-0 p-1 p-md-3 bg-dark"
                     >
                         <!-- Brand -->
                         <a
                             href="{% url 'home' %}"
-                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white justify-content-center"
+                            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center"
                         >
                             <span class="brand fs-2 pt-2 pt-md-0">Social</span>
                         </a>
@@ -47,14 +47,14 @@
                             <li class="nav-item">
                                 <a
                                     href="{% url 'home' %}"
-                                    class="fs-5 mb-3 nav-link text-white d-none d-md-block {{ home_page }}"
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ home_page }}"
                                     aria-current="page"
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="{% url 'home' %}"
-                                    class="text-white d-md-none {{ home_page }} sidebar-icon"
+                                    class="d-md-none {{ home_page }} sidebar-icon"
                                     ><i class="fas fa-home p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">Home</h3></a
                                 >
@@ -64,12 +64,12 @@
                             <li>
                                 <a
                                     href="#"
-                                    class="fs-5 mb-3 nav-link text-white d-none d-md-block {{ login_page }} "
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ login_page }} "
                                     >Log In</a
                                 >
                                 <a
                                     href="#"
-                                    class="text-white d-md-none {{ login_page }} sidebar-icon"
+                                    class="d-md-none {{ login_page }} sidebar-icon"
                                     ><i class="fas fa-sign-in-alt p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">Log In</h3></a
                                 >
@@ -79,12 +79,12 @@
                             <li>
                                 <a
                                     href="#"
-                                    class="fs-5 nav-link text-white d-none d-md-block {{ register_page }}"
+                                    class="fs-5 nav-link d-none d-md-block {{ register_page }}"
                                     >Register</a
                                 >
                                 <a
                                     href="#"
-                                    class="text-white d-md-none {{ register_page }} sidebar-icon"
+                                    class="d-md-none {{ register_page }} sidebar-icon"
                                     ><i class="fas fa-user-plus p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">Register</h3></a
                                 >
