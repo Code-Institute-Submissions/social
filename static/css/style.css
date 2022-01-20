@@ -114,7 +114,6 @@ nav {
 }
 
 .post {
-    height: 100%;
     background-color: #212529;
     border-radius: 10px;
 }
@@ -195,6 +194,11 @@ nav {
 
 /* Post View Page */
 .post-detail {
-    height: 500px;
     background-color: #212529;
 }
+
+#title,
+#author {
+    color: #ff4000;
+}
+

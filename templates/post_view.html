@@ -1,10 +1,45 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
-{% block content %} 
-<h1>{{ test }}</h1>
+{% block content %}
 <div class="row justify-content-center">
-    <div class="col-10 text-center post-detail">
-        {{ test }}
+    <div class="col-11 col-xl-7 post-detail rounded pb-3">
+        <!-- Title -->
+        <div class="row mt-2">
+            <div class="col">
+                <h2 id="title">{{ post.title }}</h2>
+            </div>
+        </div>
+
+        <!-- Author/Category -->
+        <div class="row mt-2 fst-italic">
+            <div class="col">
+                <span>by <span id="author">{{ post.author }}</span></span>
+            </div>
+
+            <div class="col text-end">
+                <i class="fas fa-tag"></i>
+                <span>{{ post.category }}</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="row">
+            <div class="col">
+                <p>{{ post.content | safe }}</p>
+            </div>
+        </div>
+
+        {% if post.image %}
+        <div class="row">
+            <div class="col">
+                <img
+                    class="img-fluid rounded border border-secondary"
+                    src="{{ post.image.url }}"
+                    alt="post-image"
+                />
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

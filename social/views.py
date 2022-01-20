@@ -25,5 +25,5 @@ class PostView(View):
         post = Post.objects.get(slug=slug)
 
         return render(request, 'post_view.html', {
-            'test': post.title
+            'post': post
         })
