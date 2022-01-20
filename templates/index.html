@@ -60,7 +60,10 @@
         <!-- Additional -->
         <div class="row">
             <div class="col text-center">
-                <a class="btn btn-warning mb-2" href="{% url 'post_detail' post.slug %}">
+                <a
+                    class="btn btn-warning mb-2"
+                    href="{% url 'post_detail' post.slug %}"
+                >
                     See More
                 </a>
             </div>
@@ -93,7 +96,7 @@
 
                 <!-- Username/Category -->
                 <div class="row mt-2 mb-1">
-                    <div class="d-flex">
+                    <div class="d-flex col">
                         <span class="username fst-italic me-2"
                             >{{ post.author }}</span
                         >
@@ -115,7 +118,10 @@
                 <!-- Additional -->
                 <div class="row">
                     <div class="col text-center">
-                        <a class="btn btn-warning mb-2" href="{% url 'post_detail' post.slug %}">
+                        <a
+                            class="btn btn-warning mb-2"
+                            href="{% url 'post_detail' post.slug %}"
+                        >
                             See More
                         </a>
                     </div>
