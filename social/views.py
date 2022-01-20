@@ -23,7 +23,9 @@ class PostView(View):
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
+        comments = post.comments.order_by('-comment_date')
 
         return render(request, 'post_view.html', {
-            'post': post
+            'post': post,
+            'comments': comments,
         })

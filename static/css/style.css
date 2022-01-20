@@ -115,7 +115,6 @@ nav {
 
 .post {
     background-color: #212529;
-    border-radius: 10px;
 }
 
 .post-preview p {
@@ -193,12 +192,16 @@ nav {
 }
 
 /* Post View Page */
-.post-detail {
+.post-detail,
+.comment {
     background-color: #212529;
 }
 
 #title,
-#author {
+.author {
     color: #ff4000;
 }
 
+.comment_date {
+    font-size: 85%;
+}
