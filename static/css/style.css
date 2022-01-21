@@ -15,7 +15,7 @@ a:hover {
 }
 
 .org-text {
-    color: #ff4000;
+    color: #ff4000 !important;
 }
 
 .org-bg {

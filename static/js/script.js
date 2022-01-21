@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    /** Toggle navigation */
+    // Toggle navigation 
     $("#nav-toggle").click(function () {
         arrowToggle();
         $("#nav-collapse").toggle(500);
     });
+
+    // Bootstrap class control
+    loginClassAdd();
 });
 
 /** Check current status of arrow nav toggler and change it to the opposite.*/
@@ -17,4 +20,10 @@ function arrowToggle() {
             .removeClass("fa-arrow-circle-left")
             .addClass("fa-arrow-circle-right");
     }
+}
+
+/** Add Bootstrap classes to Login page inputs dynamically created by allauth */
+function loginClassAdd() {
+    $("#id_login").addClass("form-control");
+    $("#id_password").addClass("form-control");
 }
