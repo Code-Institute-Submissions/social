@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Toggle navigation 
+    // Toggle navigation
     $("#nav-toggle").click(function () {
         arrowToggle();
         $("#nav-collapse").toggle(500);
@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     // Bootstrap class control
     loginClassAdd();
+    signupClassAdd();
 });
 
 /** Check current status of arrow nav toggler and change it to the opposite.*/
@@ -26,4 +27,12 @@ function arrowToggle() {
 function loginClassAdd() {
     $("#id_login").addClass("form-control");
     $("#id_password").addClass("form-control");
+}
+
+/** Add Bootstrap classes to Signup page inputs dynamically created by allauth */
+function signupClassAdd() {
+    $("#id_username").addClass("form-control");
+    $("#id_email").addClass("form-control");
+    $("#id_password1").addClass("form-control");
+    $("#id_password2").addClass("form-control");
 }

@@ -5,17 +5,29 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+<div class="row justify-content-center">
+    <div class="col-11 col-md-7 col-xxl-5 grey-bg rounded p-3">
+        <!-- Title -->
+        <h1 class="org-text fw-bold">{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+        <!-- Prompt -->
+        <p>{% blocktrans %}Already have an account? Then please <a class="org-text text-decoration-underline"
+                href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+        </p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+        <!-- Form Component -->
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+            <div class="text-center">
+                <button class="btn-warning btn org-bg" type="submit">{% trans "Sign Up" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
