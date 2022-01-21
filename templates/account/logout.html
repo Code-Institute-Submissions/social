@@ -7,10 +7,13 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-11 col-md-7 col-xxl-5 grey-bg rounded p-3">
+        <!-- Title -->
         <h1>{% trans "Sign Out" %}</h1>
 
+        <!-- Prompt -->
         <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
+        <!-- Form Component -->
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {% if redirect_field_value %}
@@ -20,6 +23,4 @@
         </form>
     </div>
 </div>
-
-
 {% endblock %}

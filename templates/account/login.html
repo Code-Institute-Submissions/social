@@ -8,8 +8,10 @@
 <div class="row justify-content-center">
     <div class="col-11 col-md-7 col-xxl-5 grey-bg rounded p-3">
 
+        <!-- Title -->
         <h1 class="org-text fw-bold">{% trans "Sign In" %}</h1>
 
+        <!-- Prompt -->
         <p>{% blocktrans %}If you have not created an account yet, then please
             <a class="org-text text-decoration-underline" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
         </p>
@@ -28,5 +30,4 @@
         </form>
     </div>
 </div>
-
 {% endblock %}
