@@ -1,5 +1,11 @@
 {% load static %}
 
+<!-- Variables for navigation active class -->
+{% url 'home' as home %} 
+{% url 'account_login' as login %} 
+{% url 'account_logout' as logout %} 
+{% url 'account_signup' as signup %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,7 +41,9 @@
                             href="{% url 'home' %}"
                             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto justify-content-center"
                         >
-                            <span class="brand fs-2 pt-2 pt-md-0 org-text">Social</span>
+                            <span class="brand fs-2 pt-2 pt-md-0 org-text"
+                                >Social</span
+                            >
                         </a>
                         <hr />
 
@@ -47,13 +55,13 @@
                             <li class="nav-item">
                                 <a
                                     href="{% url 'home' %}"
-                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ home_page }}"
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {% if request.path == home %} active {% endif %}"
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="{% url 'home' %}"
-                                    class="d-md-none {{ home_page }} sidebar-icon"
+                                    class="d-md-none sidebar-icon {% if request.path == home %} active {% endif %}"
                                     ><i class="fas fa-home p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">
                                         Home
@@ -66,13 +74,13 @@
                             <li>
                                 <a
                                     href="{% url 'account_logout' %}"
-                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ logout_page }}"
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {% if request.path == logout %} active {% endif %}"
                                 >
                                     Logout
                                 </a>
                                 <a
                                     href="{% url 'account_logout' %}"
-                                    class="d-md-none {{ logout_page }} sidebar-icon"
+                                    class="d-md-none sidebar-icon {% if request.path == logout %} active {% endif %}"
                                 >
                                     <i class="fas fa-sign-out-alt p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">
@@ -86,12 +94,12 @@
                             <li>
                                 <a
                                     href="{% url 'account_login' %}"
-                                    class="fs-5 mb-3 nav-link d-none d-md-block {{ login_page }} "
+                                    class="fs-5 mb-3 nav-link d-none d-md-block {% if request.path == login %} active {% endif %}"
                                     >Log In</a
                                 >
                                 <a
                                     href="{% url 'account_login' %}"
-                                    class="d-md-none {{ login_page }} sidebar-icon"
+                                    class="d-md-none sidebar-icon {% if request.path == login %} active {% endif %}"
                                     ><i class="fas fa-sign-in-alt p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">
                                         Log In
@@ -103,12 +111,12 @@
                             <li>
                                 <a
                                     href="{% url 'account_signup' %}"
-                                    class="fs-5 nav-link d-none d-md-block {{ register_page }}"
+                                    class="fs-5 nav-link d-none d-md-block {% if request.path == signup %} active {% endif %}"
                                     >Register</a
                                 >
                                 <a
                                     href="{% url 'account_signup' %}"
-                                    class="d-md-none {{ register_page }} sidebar-icon"
+                                    class="d-md-none sidebar-icon {% if request.path == signup %} active {% endif %}"
                                     ><i class="fas fa-user-plus p-2"></i>
                                     <h3 class="mb-5 mt-1 fs-6 icon-text">
                                         Register
@@ -146,7 +154,12 @@
                     <div class="row justify-content-center">
                         <div class="col-6 text-center mb-3">
                             <h1 id="heading" class="text-dark">
-                                Welcome to <a href="{% url 'home' %}"><span class="brand org-text">Social</span></a>
+                                Welcome to
+                                <a href="{% url 'home' %}"
+                                    ><span class="brand org-text"
+                                        >Social</span
+                                    ></a
+                                >
                             </h1>
                         </div>
                     </div>

@@ -15,7 +15,6 @@ class Home(View):
 
         return render(request, 'index.html', {
             'page_obj': page_obj,
-            'home_page': 'active'
         })
 
 
