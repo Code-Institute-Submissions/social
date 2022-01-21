@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="row justify-content-center mb-2">
-    <div class="col-11 col-xl-7 post-detail rounded pb-3">
+    <div class="col-11 col-xl-7 post-detail rounded pb-3 grey-bg">
         <!-- Title -->
         <div class="row mt-2">
             <div class="col">
@@ -20,7 +20,7 @@
         <!-- Author/Category -->
         <div class="row mt-2 fst-italic">
             <div class="col">
-                <span>by <span class="author">{{ post.author }}</span></span>
+                <span>by <span class="author org-text">{{ post.author }}</span></span>
             </div>
 
             <div class="col text-end">
@@ -60,8 +60,8 @@
 <!-- Comment Component -->
 {% for comment in comments %}
 <div class="row justify-content-center mb-2">
-    <div class="col-11 col-xl-7 rounded comment">
-        <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author">{{ comment.author }}</span> commented...</h3>
+    <div class="col-11 col-xl-7 rounded comment grey-bg">
+        <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author org-text">{{ comment.author }}</span> commented...</h3>
         <span class="fst-italic comment-date">{{ comment.comment_date }}</span>
         <hr>
         <p class="mt-2">{{ comment.content }}</p>

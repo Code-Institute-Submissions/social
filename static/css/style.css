@@ -14,6 +14,19 @@ a:hover {
     color: inherit !important;
 }
 
+.org-text {
+    color: #ff4000;
+}
+
+.org-bg {
+    background-color: #ff4000;
+}
+
+.grey-bg {
+    background-color: #212529;
+}
+
+
 main {
     min-width: 0;
 }
@@ -79,16 +92,11 @@ nav {
 
 .brand {
     font-family: Pacifico, sans-serif;
-    color: #ff4000;
 }
 
 #nav-toggle {
     background: none;
     border: none;
-}
-
-#toggle-icon {
-    color: #ff4000;
 }
 
 @media screen and (max-width: 768px) {
@@ -120,7 +128,7 @@ nav {
 }
 
 .post {
-    background-color: #212529;
+    height: 100%;
 }
 
 .post-preview p {
@@ -130,7 +138,6 @@ nav {
 }
 
 .btn-warning {
-    background-color: #ff4000;
     border: none;
 }
 
@@ -149,11 +156,6 @@ nav {
     border-radius: 10px;
     border: 1px solid #fff;
     object-fit: cover;
-}
-
-.page-link {
-    background-color: #212529;
-    color: #fff;
 }
 
 .page-link:hover,
@@ -198,15 +200,6 @@ nav {
 }
 
 /* Post View Page */
-.post-detail,
-.comment {
-    background-color: #212529;
-}
-
-#title,
-.author {
-    color: #ff4000;
-}
 
 .comment_date {
     font-size: 85%;
