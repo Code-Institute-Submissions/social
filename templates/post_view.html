@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
+
 <div class="row justify-content-center mb-2">
     <div class="col-11 col-xl-7 post-detail rounded pb-3 grey-bg">
         <!-- Title -->
@@ -39,11 +42,7 @@
         {% if post.image %}
         <div class="row">
             <div class="col">
-                <img
-                    class="img-fluid rounded border border-secondary"
-                    src="{{ post.image.url }}"
-                    alt="post-image"
-                />
+                <img class="img-fluid rounded border border-secondary" src="{{ post.image.url }}" alt="post-image" />
             </div>
         </div>
         {% endif %}
@@ -57,15 +56,54 @@
     </div>
 </div>
 
+<!-- Add Comment Button -->
+<div class="row justify-content-center">
+    <div class="col text-center">
+        <button type="button" class="btn btn-warning org-bg mb-2" data-bs-toggle="modal"
+            data-bs-target="#comment-modal">Add Comment...</button>
+    </div>
+</div>
+
+<!-- Add Comment Modal -->
+<div class="modal fade" id="comment-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content grey-bg">
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add a comment...</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Body/Form-->
+            <div class="modal-body">
+                <form method="POST">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning org-bg mt-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Comment Component -->
 {% for comment in comments %}
 <div class="row justify-content-center mb-2">
     <div class="col-11 col-xl-7 rounded comment grey-bg">
-        <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author org-text">{{ comment.author }}</span> commented...</h3>
+        <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author org-text">{{ comment.author }}</span> commented...
+        </h3>
         <span class="fst-italic comment-date">{{ comment.comment_date }}</span>
         <hr>
         <p class="mt-2">{{ comment.content }}</p>
     </div>
 </div>
 {% endfor %}
+
 {% endblock %}

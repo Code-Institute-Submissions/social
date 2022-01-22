@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'social',
     'django_summernote',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'social_app.wsgi.application'
 

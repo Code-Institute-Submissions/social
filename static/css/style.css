@@ -26,7 +26,6 @@ a:hover {
     background-color: #212529;
 }
 
-
 main {
     min-width: 0;
 }
@@ -203,4 +202,10 @@ nav {
 
 .comment_date {
     font-size: 85%;
+}
+
+@media screen and (min-width: 770px) {
+    #comment-modal {
+        margin-left: 8%;
+    }
 }
