@@ -57,10 +57,18 @@
 </div>
 
 <!-- Add Comment Button -->
-<div class="row justify-content-center">
+<div class="row justify-content-center mb-2">
     <div class="col text-center">
-        <button type="button" class="btn btn-warning org-bg mb-2" data-bs-toggle="modal"
-            data-bs-target="#comment-modal">Add Comment...</button>
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-warning org-bg" data-bs-toggle="modal" data-bs-target="#comment-modal">Add
+            Comment...</button>
+
+        {% else %}
+        <span class="grey-bg p-1 rounded">Please <a href="{% url 'account_login' %}"
+                class="org-text text-decoration-underline">login</a> or <a href="{% url 'account_signup' %}"
+                class="org-text text-decoration-underline">sign
+                up</a> to comment.</span>
+        {% endif %}
     </div>
 </div>
 
@@ -71,7 +79,8 @@
             <!-- Header -->
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add a comment...</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
 
             <!-- Body/Form-->
