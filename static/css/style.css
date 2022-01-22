@@ -140,7 +140,9 @@ nav {
     border: none;
 }
 
-.btn-warning:hover {
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus {
     background-color: #ff5500;
 }
 
