@@ -1,4 +1,54 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!-- Add Post Button-->
+<div class="row justify-content-center mb-2">
+    <div class="col-11 col-xl-7 text-center">
+        <button type="button" class="btn btn-warning org-bg" data-bs-toggle="modal" data-bs-target="#post-modal">Create
+            Post</button>
+    </div>
+</div>
+
+<!-- Add Post Modal -->
+<div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content grey-bg">
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create a post...</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- Body/Form-->
+            <div class="modal-body">
+                <form method="POST">
+                    {{ post_form | crispy }}
+                    <label for="categories">Category</label>
+                    <input class="text-dark form-control" type="text" id="categories" list="categories-list">
+                    <datalist id="categories-list">
+                        {% for category in categories %}
+                        <option value="{{ category }}">
+                            {% endfor %}
+                    </datalist>
+                    </input>
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning org-bg mt-2">Post</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- prettier-ignore -->
 {% for post in page_obj %} {% if post.image %}
@@ -19,22 +69,16 @@
                 <!-- Date -->
                 <div class="row">
                     <div class="col mt-1">
-                        <span class="fst-italic date"
-                            >{{ post.post_date }}</span
-                        >
+                        <span class="fst-italic date">{{ post.post_date }}</span>
                     </div>
                 </div>
 
                 <!-- Username/Category -->
                 <div class="row mt-2 mb-1">
                     <div class="d-flex">
-                        <span class="username fst-italic me-2"
-                            >{{ post.author }}</span
-                        >
+                        <span class="username fst-italic me-2">{{ post.author }}</span>
                         <span><i class="align-middle fas fa-circle"></i></span>
-                        <span class="category fst-italic ms-2"
-                            >{{ post.category }}</span
-                        >
+                        <span class="category fst-italic ms-2">{{ post.category }}</span>
                     </div>
                 </div>
 
@@ -48,11 +92,7 @@
 
             <!-- Image -->
             <div class="col d-flex justify-content-center align-items-end">
-                <img
-                    class="preview-img"
-                    src="{{ post.image.url }}"
-                    alt="post image"
-                />
+                <img class="preview-img" src="{{ post.image.url }}" alt="post image" />
             </div>
         </div>
         <hr />
@@ -60,10 +100,7 @@
         <!-- Additional -->
         <div class="row">
             <div class="col text-center">
-                <a
-                    class="btn btn-warning mb-2 org-bg"
-                    href="{% url 'post_detail' post.slug %}"
-                >
+                <a class="btn btn-warning mb-2 org-bg" href="{% url 'post_detail' post.slug %}">
                     See More
                 </a>
             </div>
@@ -88,22 +125,16 @@
                 <!-- Date -->
                 <div class="row">
                     <div class="col mt-1">
-                        <span class="fst-italic date"
-                            >{{ post.post_date }}</span
-                        >
+                        <span class="fst-italic date">{{ post.post_date }}</span>
                     </div>
                 </div>
 
                 <!-- Username/Category -->
                 <div class="row mt-2 mb-1">
                     <div class="d-flex col">
-                        <span class="username fst-italic me-2"
-                            >{{ post.author }}</span
-                        >
+                        <span class="username fst-italic me-2">{{ post.author }}</span>
                         <span><i class="align-middle fas fa-circle"></i></span>
-                        <span class="category fst-italic ms-2"
-                            >{{ post.category }}</span
-                        >
+                        <span class="category fst-italic ms-2">{{ post.category }}</span>
                     </div>
                 </div>
 
@@ -118,10 +149,7 @@
                 <!-- Additional -->
                 <div class="row">
                     <div class="col text-center">
-                        <a
-                            class="btn btn-warning mb-2 org-bg"
-                            href="{% url 'post_detail' post.slug %}"
-                        >
+                        <a class="btn btn-warning mb-2 org-bg" href="{% url 'post_detail' post.slug %}">
                             See More
                         </a>
                     </div>
@@ -141,35 +169,21 @@
                 <a class="page-link grey-bg" href="?page=1">First</a>
             </li>
             <li class="page-item">
-                <a
-                    class="page-link grey-bg"
-                    href="?page={{ page_obj.previous_page_number }}"
-                    >Back</a
-                >
+                <a class="page-link grey-bg" href="?page={{ page_obj.previous_page_number }}">Back</a>
             </li>
             {% endif %}
 
             <li class="page-item d-flex align-items-center me-2 ms-2">
                 <!-- prettier-ignore -->
-                <span class="text-dark"
-                    >Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span
-                >
+                <span class="text-dark">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
             </li>
 
             {% if page_obj.has_next %}
             <li class="page-item">
-                <a
-                    class="page-link grey-bg"
-                    href="?page={{ page_obj.next_page_number }}"
-                    >Next</a
-                >
+                <a class="page-link grey-bg" href="?page={{ page_obj.next_page_number }}">Next</a>
             </li>
             <li class="page-item">
-                <a
-                    class="page-link grey-bg"
-                    href="?page={{ page_obj.paginator.num_pages }}"
-                    >Last</a
-                >
+                <a class="page-link grey-bg" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
             </li>
             {% endif %}
         </ul>

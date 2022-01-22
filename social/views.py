@@ -1,14 +1,16 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import View
-from .models import Post
-from .forms import CommentForm
+from .models import Post, Category
+from .forms import CommentForm, PostForm
 
 
 class Home(View):
 
     def get(self, request):
-        posts = Post.objects.order_by("-post_date")
+        posts = Post.objects.order_by('-post_date')
+        categories = Category.objects.order_by('title')
+
         paginator = Paginator(posts, 5)
 
         page_number = request.GET.get('page')
@@ -16,6 +18,8 @@ class Home(View):
 
         return render(request, 'index.html', {
             'page_obj': page_obj,
+            'post_form': PostForm,
+            'categories': categories,
         })
 
 
