@@ -27,14 +27,6 @@
             <div class="modal-body">
                 <form method="POST">
                     {{ post_form | crispy }}
-                    <label for="categories">Category</label>
-                    <input class="text-dark form-control" type="text" id="categories" list="categories-list">
-                    <datalist id="categories-list">
-                        {% for category in categories %}
-                        <option value="{{ category }}">
-                            {% endfor %}
-                    </datalist>
-                    </input>
                     {% csrf_token %}
                     <div class="text-center">
                         <button type="submit" class="btn btn-warning org-bg mt-2">Post</button>
