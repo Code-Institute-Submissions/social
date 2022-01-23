@@ -29,7 +29,8 @@ This is a Django-based, data-driven application that supports authentication and
 
 ### Database Schema / Models
 
-3 custom models have been implemented in the design of Social. The models are: 
+3 custom models have been implemented in the design of Social. The models are:
+
 -   Category
 -   Post
 -   Comment
@@ -73,10 +74,52 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
 -   [Git](https://git-scm.com/)
     -   Used for local version control to then push remotely.
 -   [GitHub](https://github.com/)
-    -   Github is used to store the project after pushing to Git.
+    -   Used to store the project after pushing to Git.
 -   [Heroku](https://dashboard.heroku.com/login)
-    -   Heroku is used to host the application.
+    -   Used to host the application.
+-   [Hover.css](https://ianlunn.github.io/Hover/)
+    -   Used for navbar animation.
 
 ### Database
 
 [PostgreSQL](https://www.postgresql.org/) was used for the databse. Information is passed to the database using Django's built-in database adapter.
+
+## Deployment
+
+This project is deployed to Heroku.
+
+Steps for deployment:
+
+-   Install Django and relevant dependencies.
+-   Create new Django project with appropriate Procfile for Heroku.
+-   Run: 
+    ```
+    pip freeze --local > requirements.txt
+    ```
+-   Ensure all code is pushed to Github.
+-   Navigate to Heroku, login, and click "create a new app".
+-   Enter a unique name for the application, and select the appropriate region.
+-   Add PostgreSQL 'hobby' database as a resource. The URL is automatically added to config vars.
+-   During development, enable "DISABLE_COLLECTSTATIC = 1", and "DEBUG = TRUE". These must be disabled before final deployment.
+-   Next, head to the "Deploy" tab and select Github as the deployment method.
+-   Click the "Connect to Github" button and enter your details.
+-   Search for your repository and select the appropriate one.
+-   You can choose to either manually deploy or enable automatic deploys. In this case, I chose automatic deploys.
+
+Cloning the repository:
+
+-   Navigate to the project repository.
+-   In the top right, click "Fork" to fork the repo.
+-   After you have your own fork of the repo, click the "Code" button. A dropdown should appear.
+-   Copy the SSH key and navigate to your local terminal.
+-   Clone the repo using the below command:
+
+```
+$ git clone "HTTPS URL"
+```
+
+## Credit
+
+All code/content is original unless stated.
+
+Credit to [Ian Lunn](https://github.com/IanLunn/) for the code I used to animate the navigation elements.
