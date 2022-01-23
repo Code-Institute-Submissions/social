@@ -52,3 +52,31 @@ As can be seen, the below wireframes differ slightly from the final deployed pro
 Roboto is used for font across the application. Pacifico is used to style the brand font.
 
 The primary colours used in the design are orange (#ff4000), grey (#212529) and white (#fff).
+
+## Technologies
+
+### Languages Used
+
+-   HTML
+-   CSS
+-   JavaScript
+-   Python
+
+### Frameworks/Libraries Used
+
+-   [Django](https://www.djangoproject.com/)
+    -   Used as the backend for this project.
+-   [jQuery](https://jquery.com/)
+    -   Used for minimising/optimising JavaScript used in the project.
+-   [Boostrap](https://getbootstrap.com/)
+    -   Used for styling templates.
+-   [Git](https://git-scm.com/)
+    -   Used for local version control to then push remotely.
+-   [GitHub](https://github.com/)
+    -   Github is used to store the project after pushing to Git.
+-   [Heroku](https://dashboard.heroku.com/login)
+    -   Heroku is used to host the application.
+
+### Database
+
+[PostgreSQL](https://www.postgresql.org/) was used for the databse. Information is passed to the database using Django's built-in database adapter.
