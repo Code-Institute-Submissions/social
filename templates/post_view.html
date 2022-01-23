@@ -15,7 +15,7 @@
             <!-- Delete/Update -->
             {% if user.username == post.author.username %}
             <div class="col text-end">
-                <a href=""><i class="fas fa-trash-alt p-1 org-text"></i></a>
+                <a href="{% url 'delete_post' post.slug %}"><i class="fas fa-trash-alt p-1 org-text"></i></a>
                 <a href=""><i class="fas fa-edit p-1 org-text"></i></a>
             </div>
             {% endif %}

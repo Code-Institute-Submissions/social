@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Post, Category
 from .forms import CommentForm, PostForm
@@ -79,3 +79,19 @@ class PostView(View):
             'comment_form': CommentForm()
         })
 
+
+class DeletePost(View):
+
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+
+        return render(request, 'delete_post.html', {
+            'post': post,
+        })
+    
+    def post(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        post.delete()
+        
+        return redirect('home')
+    

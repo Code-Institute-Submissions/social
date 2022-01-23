@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-11 col-md-7 col-xxl-5 grey-bg rounded p-3">
+        <!-- Title -->
+        <h1>Delete Post?</h1>
+
+        <!-- Prompt -->
+        <p>Are you sure you want to delete the post? {{ post.title }}</p>
+
+        <!-- Form Component -->
+        <form method="post" action="{% url 'delete_post' post.slug %}">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit" value="post.slug">Delete</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
