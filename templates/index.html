@@ -4,6 +4,7 @@
 
 {% load crispy_forms_tags %}
 
+{% if user.is_authenticated %}
 <!-- Add Post Button-->
 <div class="row justify-content-center mb-2">
     <div class="col-11 col-xl-7 text-center">
@@ -36,6 +37,18 @@
         </div>
     </div>
 </div>
+
+<!-- Login/Signup Prompt -->
+{% else %}
+<div class="row justify-content-center mb-2">
+    <div class="col-11 col-xl-7 text-center">
+        <span class="grey-bg p-1 rounded">Please <a href="{% url 'account_login' %}"
+                class="org-text text-decoration-underline">login</a> or <a href="{% url 'account_signup' %}"
+                class="org-text text-decoration-underline">sign
+                up</a> to post.</span>
+    </div>
+</div>
+{% endif %}
 
 <!-- prettier-ignore -->
 {% for post in page_obj %} {% if post.image %}
