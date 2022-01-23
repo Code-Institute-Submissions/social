@@ -1,6 +1,6 @@
 # Social
 
-![Site Preview](readme/preview.jpg)
+![Site Preview](readme/general/preview.JPG)
 
 Social is a simple social media style web application, allowing users to share and engage with community content.
 
