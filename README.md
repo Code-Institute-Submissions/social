@@ -1,5 +1,7 @@
 # Social
 
+![Site Preview](readme/preview.jpg)
+
 Social is a simple social media style web application, allowing users to share and engage with community content.
 
 This is a Django-based, data-driven application that supports authentication and full CRUD functionality using PostgreSQL, hosted via Heroku.
