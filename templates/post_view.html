@@ -56,19 +56,12 @@
     </div>
 </div>
 
+{% if user.is_authenticated %}
 <!-- Add Comment Button -->
 <div class="row justify-content-center mb-2">
     <div class="col text-center">
-        {% if user.is_authenticated %}
         <button type="button" class="btn btn-warning org-bg" data-bs-toggle="modal" data-bs-target="#comment-modal">Add
             Comment...</button>
-
-        {% else %}
-        <span class="grey-bg p-1 rounded">Please <a href="{% url 'account_login' %}"
-                class="org-text text-decoration-underline">login</a> or <a href="{% url 'account_signup' %}"
-                class="org-text text-decoration-underline">sign
-                up</a> to comment.</span>
-        {% endif %}
     </div>
 </div>
 
@@ -96,6 +89,17 @@
         </div>
     </div>
 </div>
+
+{% else %}
+<div class="row justify-content-center mb-2">
+    <div class="col text-center">
+        <span class="grey-bg p-1 rounded">Please <a href="{% url 'account_login' %}"
+                class="org-text text-decoration-underline">login</a> or <a href="{% url 'account_signup' %}"
+                class="org-text text-decoration-underline">sign
+                up</a> to comment.</span>
+    </div>
+</div>
+{% endif %}
 
 <!-- Comment Component -->
 {% for comment in comments %}
