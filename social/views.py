@@ -22,6 +22,30 @@ class Home(View):
             'categories': categories,
         })
 
+    def post(self, request):
+        posts = Post.objects.order_by('-post_date')
+        categories = Category.objects.order_by('title')
+
+        paginator = Paginator(posts, 5)
+
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        post_form = PostForm(request.POST, request.FILES)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.slug = '-'.join(post.title.split())
+            post.save()
+        else:
+            post_form = PostForm()
+
+        return render(request, 'index.html', {
+            'page_obj': page_obj,
+            'post_form': PostForm,
+            'categories': categories,
+        })
 
 class PostView(View):
 
