@@ -113,13 +113,28 @@
 {% for comment in comments %}
 <div class="row justify-content-center mb-2">
     <div class="col-11 col-xl-7 rounded comment grey-bg">
-        <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author org-text">{{ comment.author }}</span> commented...
-        </h3>
+        <div class="row">
+            <!-- Title -->
+            <div class="col">
+                <h3 class="fst-italic fs-5 mt-2 mb-0"><span class="author org-text">{{ comment.author }}</span>
+                    commented...
+                </h3>
+            </div>
+
+            <!-- Delete/Update -->
+            {% if user.username == comment.author.username %}
+            <div class="col text-end mt-2">
+                <a href="{% url 'delete_comment' post.slug comment.id %}"><i class="fas fa-trash-alt p-1 org-text"></i></a>
+                <a href=""><i class="fas fa-edit p-1 org-text"></i></a>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Date/Content -->
         <span class="fst-italic comment-date">{{ comment.comment_date }}</span>
         <hr>
         <p class="mt-2">{{ comment.content }}</p>
     </div>
 </div>
 {% endfor %}
-
 {% endblock %}
