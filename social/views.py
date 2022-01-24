@@ -89,7 +89,7 @@ class DeletePost(View):
             'post': post,
         })
     
-    def post(self, request, slug):
+    def post(self, slug):
         post = Post.objects.get(slug=slug)
         post.delete()
         

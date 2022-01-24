@@ -54,6 +54,33 @@ Roboto is used for font across the application. Pacifico is used to style the br
 
 The primary colours used in the design are orange (#ff4000), grey (#212529) and white (#fff).
 
+## Features
+
+-   Create Post
+    -   Once authenticated, users are able to create posts to share with the community.
+-   Add Category
+    -   Users are able to add categories to their posts so others can see what the posts relate to.
+-   Add Comment
+    -   Once authenticated, users are able to leave comments on posted content. 
+-   View Post Feed
+    -   A feed of posts filtered by date is available for users to scroll through.
+-   Post View
+    -   Each post can be viewed in full. Users are able to see the content in a dedicated view.
+-   View Comments
+    -   All comments for a post can be viewed via the post view page.
+-   User Authentication
+    -   Authentication is implemented to allow each user to sign up for an account, allowing user-exclusive actions on the site, such as posting and commenting.
+-   Post/Comment Date
+    -   Post/comment dates are displayed on each post/comment.
+-   Post Feed Pagination
+    -   Pagination is implemented to limit the amount of posts per page to 5 on the home page.
+-   Post Modification
+    -   Users can modify post content, providing they own the post.
+-   Comment Modification
+    -   Users can modify comment content, providing they own the comment.
+-   Site Admin Modification
+    -   Admin users are able to modify all content on the site to ensure it adheres to guidelines.
+
 ## Technologies
 
 ### Languages Used
