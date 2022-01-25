@@ -125,7 +125,7 @@
             {% if user.username == comment.author.username %}
             <div class="col text-end mt-2">
                 <a href="{% url 'delete_comment' post.slug comment.id %}"><i class="fas fa-trash-alt p-1 org-text"></i></a>
-                <a href=""><i class="fas fa-edit p-1 org-text"></i></a>
+                <a href="{% url 'edit_comment' post.slug comment.id %}"><i class="fas fa-edit p-1 org-text"></i></a>
             </div>
             {% endif %}
         </div>

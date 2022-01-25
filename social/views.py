@@ -147,3 +147,16 @@ class EditPost(View):
             'post': post,
             'post_form': post_form,
         })
+
+
+class EditComment(View):
+
+    def get(self, request, slug, comment_id):
+        post = Post.objects.get(slug=slug)
+        comment = Comment.objects.get(id=comment_id)
+        comment_form = CommentForm(instance=comment)
+
+        return render(request, 'edit_comment.html', {
+            'post': post,
+            'comment_form': comment_form,
+        })
