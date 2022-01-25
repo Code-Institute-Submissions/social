@@ -14,12 +14,12 @@
 </div>
 
 <!-- Add Post Modal -->
-<div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="post-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content grey-bg">
             <!-- Header -->
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create a post...</h5>
+                <h5 class="modal-title">Create a post...</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
@@ -50,7 +50,6 @@
 </div>
 {% endif %}
 
-<!-- prettier-ignore -->
 {% for post in page_obj %} {% if post.image %}
 <!-- Post Component -->
 <div class="row justify-content-center mb-2 post-container">
@@ -174,7 +173,6 @@
             {% endif %}
 
             <li class="page-item d-flex align-items-center me-2 ms-2">
-                <!-- prettier-ignore -->
                 <span class="text-dark">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
             </li>
 

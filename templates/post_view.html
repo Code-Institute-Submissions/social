@@ -74,12 +74,12 @@
 </div>
 
 <!-- Add Comment Modal -->
-<div class="modal fade" id="comment-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="comment-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content grey-bg">
             <!-- Header -->
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add a comment...</h5>
+                <h5 class="modal-title">Add a comment...</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
@@ -125,7 +125,8 @@
             {% if user.username == comment.author.username %}
             <div class="col text-end mt-2">
                 <a href="{% url 'edit_comment' post.slug comment.id %}"><i class="fas fa-edit p-1 org-text"></i></a>
-                <a href="{% url 'delete_comment' post.slug comment.id %}"><i class="fas fa-trash-alt p-1 org-text"></i></a>
+                <a href="{% url 'delete_comment' post.slug comment.id %}"><i
+                        class="fas fa-trash-alt p-1 org-text"></i></a>
             </div>
             {% endif %}
         </div>
