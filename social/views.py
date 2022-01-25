@@ -160,3 +160,10 @@ class EditComment(View):
             'post': post,
             'comment_form': comment_form,
         })
+
+    def post(self, request, slug, comment_id):
+        comment = Comment.objects.get(id=comment_id)
+        comment_form = CommentForm(request.POST, instance=comment)
+        comment_form.save()
+
+        return redirect('post_detail', slug=slug)
