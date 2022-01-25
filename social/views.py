@@ -50,6 +50,7 @@ class Home(View):
             'categories': categories,
         })
 
+
 @method_decorator(login_required, name='post')
 class PostView(View):
 
@@ -92,26 +93,38 @@ class DeletePost(View):
         return render(request, 'delete_post.html', {
             'post': post,
         })
-    
+
     def post(self, request, slug):
         post = Post.objects.get(slug=slug)
         post.delete()
-        
+
         return redirect('home')
-    
+
 
 class DeleteComment(View):
 
     def get(self, request, slug, comment_id):
         post = Post.objects.get(slug=slug)
-        
+
         return render(request, 'delete_comment.html', {
             'post': post,
             'comment_id': comment_id,
         })
-    
+
     def post(self, request, slug, comment_id):
         com = Comment.objects.get(id=comment_id)
         com.delete()
-        
+
         return redirect('post_detail', slug=slug)
+
+
+class EditPost(View):
+
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        post_form = PostForm(instance=post)
+
+        return render(request, 'edit_post.html', {
+            'post': post,
+            'post_form': post_form,
+        })
