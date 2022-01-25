@@ -128,3 +128,22 @@ class EditPost(View):
             'post': post,
             'post_form': post_form,
         })
+
+    def post(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        post_form = PostForm(request.POST, request.FILES, instance=post)
+
+        if post_form.is_valid():
+            post_new = post_form.save(commit=False)
+            post_new.author = request.user
+            post_new.slug = '-'.join(post_new.title.split())
+            post_new.save()
+
+            return redirect('post_detail', slug=post_new.slug)
+        else:
+            post_form = PostForm()
+
+        return render(request, 'edit_post.html', {
+            'post': post,
+            'post_form': post_form,
+        })
