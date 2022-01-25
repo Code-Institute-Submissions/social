@@ -14,6 +14,7 @@
         <form method="post" action="{% url 'delete_post' post.slug %}">
             {% csrf_token %}
             <button class="btn btn-danger" type="submit" value="post.slug">Delete</button>
+            <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 </div>

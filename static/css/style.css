@@ -136,7 +136,8 @@ nav {
     text-overflow: ellipsis;
 }
 
-.btn-warning {
+.btn-warning,
+.btn-secondary {
     border: none;
 }
 
