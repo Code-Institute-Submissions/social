@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import View
+from django.http import HttpResponseNotFound
 from .models import Post, Category, Comment
 from .forms import CommentForm, PostForm
 
@@ -90,15 +91,21 @@ class DeletePost(View):
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
 
-        return render(request, 'delete_post.html', {
-            'post': post,
-        })
+        if request.user == post.author:
+            return render(request, 'delete_post.html', {
+                'post': post,
+            })
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
     def post(self, request, slug):
         post = Post.objects.get(slug=slug)
-        post.delete()
 
-        return redirect('home')
+        if request.user == post.author:
+            post.delete()
+            return redirect('home')
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
 
 class DeleteComment(View):
@@ -106,64 +113,89 @@ class DeleteComment(View):
     def get(self, request, slug, comment_id):
         post = Post.objects.get(slug=slug)
 
-        return render(request, 'delete_comment.html', {
-            'post': post,
-            'comment_id': comment_id,
-        })
+        if request.user == post.author:
+            return render(request, 'delete_comment.html', {
+                'post': post,
+                'comment_id': comment_id,
+            })
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
     def post(self, request, slug, comment_id):
-        com = Comment.objects.get(id=comment_id)
-        com.delete()
+        post = Post.objects.get(slug=slug)
 
-        return redirect('post_detail', slug=slug)
+        if request.user == post.author:
+            com = Comment.objects.get(id=comment_id)
+            com.delete()
+
+            return redirect('post_detail', slug=slug)
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
 
 class EditPost(View):
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
-        post_form = PostForm(instance=post)
 
-        return render(request, 'edit_post.html', {
-            'post': post,
-            'post_form': post_form,
-        })
+        if request.user == post.author:
+            post_form = PostForm(instance=post)
+
+            return render(request, 'edit_post.html', {
+                'post': post,
+                'post_form': post_form,
+            })
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
     def post(self, request, slug):
         post = Post.objects.get(slug=slug)
-        post_form = PostForm(request.POST, request.FILES, instance=post)
 
-        if post_form.is_valid():
-            post_new = post_form.save(commit=False)
-            post_new.author = request.user
-            post_new.slug = '-'.join(post_new.title.split())
-            post_new.save()
+        if request.user == post.author:
+            post_form = PostForm(request.POST, request.FILES, instance=post)
 
-            return redirect('post_detail', slug=post_new.slug)
+            if post_form.is_valid():
+                post_new = post_form.save(commit=False)
+                post_new.author = request.user
+                post_new.slug = '-'.join(post_new.title.split())
+                post_new.save()
+
+                return redirect('post_detail', slug=post_new.slug)
+            else:
+                post_form = PostForm()
+
+            return render(request, 'edit_post.html', {
+                'post': post,
+                'post_form': post_form,
+            })
         else:
-            post_form = PostForm()
-
-        return render(request, 'edit_post.html', {
-            'post': post,
-            'post_form': post_form,
-        })
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
 
 class EditComment(View):
 
     def get(self, request, slug, comment_id):
         post = Post.objects.get(slug=slug)
-        comment = Comment.objects.get(id=comment_id)
-        comment_form = CommentForm(instance=comment)
 
-        return render(request, 'edit_comment.html', {
-            'post': post,
-            'comment_form': comment_form,
-        })
+        if request.user == post.author:
+            comment = Comment.objects.get(id=comment_id)
+            comment_form = CommentForm(instance=comment)
+
+            return render(request, 'edit_comment.html', {
+                'post': post,
+                'comment_form': comment_form,
+            })
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
 
     def post(self, request, slug, comment_id):
-        comment = Comment.objects.get(id=comment_id)
-        comment_form = CommentForm(request.POST, instance=comment)
-        comment_form.save()
+        post = Post.objects.get(slug=slug)
 
-        return redirect('post_detail', slug=slug)
+        if request.user == post.author:
+            comment = Comment.objects.get(id=comment_id)
+            comment_form = CommentForm(request.POST, instance=comment)
+            comment_form.save()
+
+            return redirect('post_detail', slug=slug)
+        else:
+            return HttpResponseNotFound('<h1>Page not found.</h1>')
