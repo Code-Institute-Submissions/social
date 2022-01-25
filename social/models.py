@@ -23,7 +23,6 @@ class Post(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='posts')
     post_date = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='post_like', blank=True)
     image = CloudinaryField('image', blank=True)
 
     class Meta:
