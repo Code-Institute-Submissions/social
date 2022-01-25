@@ -168,6 +168,14 @@ nav {
     box-shadow: none;
 }
 
+.title,
+#title,
+.category,
+.post-content,
+.comment-content {
+    word-wrap: anywhere;
+}
+
 .title:hover {
     color: #ff4000;
 }

@@ -43,7 +43,7 @@
         <!-- Content -->
         <div class="row">
             <div class="col">
-                <p>{{ post.content | safe }}</p>
+                <p class"post-content">{{ post.content | safe }}</p>
             </div>
         </div>
 
@@ -134,7 +134,7 @@
         <!-- Date/Content -->
         <span class="fst-italic comment-date">{{ comment.comment_date }}</span>
         <hr>
-        <p class="mt-2">{{ comment.content }}</p>
+        <p class="mt-2 comment-content">{{ comment.content }}</p>
     </div>
 </div>
 {% endfor %}
