@@ -110,3 +110,24 @@ All code has passed validation, returning no errors. See below for results.
     -   Full CRUD operation is avaiable from the admin panel.
 
 ![admin](user_stories/admin.JPG)
+
+## Further Testing
+
+### Responsiveness
+
+Tested using Firefox and Chrome across all viewports.
+
+### General Tests
+
+-   No links are broken and they all lead to the correct page.
+-   Images are scaled correctly and are not stretched or blurred.
+-   Authentication barriers in place in the backend. Users are prevented from accessing user-specific content.
+-   If logged in, navbar displays prompt to logout.
+-   If not logged in, navbar displays options to sign up/register.
+-   Navbar welcome message displaying correct username, and only when authenticated.
+-   Attempted long string inputs into all inputs. Word break in in place.
+-   Users are given feedback on CRUD/authenticated operations at all times. Working as expected.
+-   Admin operations are in place and operating as expected.
+-   All CRUD operations are functioning as expected. Display correctly on the frontend and registering correctly on the backend.
+-   Comment count is consistent.
+-   Button to collapse navbar functioning correctly. Changes to appropriate icon depending on current navbar collapse status.
