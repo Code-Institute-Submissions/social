@@ -4,7 +4,7 @@
 
 Social is a simple social media style web application, allowing users to share and engage with community content.
 
-This is a Django-based, data-driven application that supports authentication and full CRUD functionality using PostgreSQL, hosted via Heroku.
+This is a Django-based, data-driven application that supports authentication and full CRUD functionality using PostgreSQL, hosted via Heroku. Built using an Agile methodology, the project stages and iteration progress is available [here](https://github.com/jacobshortall/social/projects/1).
 
 [Project Live Link](https://ci-social.herokuapp.com/)
 
