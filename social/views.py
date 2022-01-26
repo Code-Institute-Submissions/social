@@ -4,6 +4,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.http import HttpResponseNotFound
+from django.contrib import messages
 from .models import Post, Category, Comment
 from .forms import CommentForm, PostForm
 
@@ -42,8 +43,13 @@ class Home(View):
             post.author = request.user
             post.slug = '-'.join(post.title.split())
             post.save()
+
+            messages.add_message(request, messages.SUCCESS,
+                                 'Post added successfully!')
         else:
             post_form = PostForm()
+            messages.add_message(
+                request, messages.WARNING, 'Something went wrong, please review your post and try again.')
 
         return render(request, 'index.html', {
             'page_obj': page_obj,
