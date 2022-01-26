@@ -128,6 +128,10 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
 
 [PostgreSQL](https://www.postgresql.org/) was used for the databse. Information is passed to the database using Django's built-in database adapter.
 
+## Testing
+
+Information on testing can be found at [TESTING.md](readme/testing/TESTING.md)
+
 ## Deployment
 
 This project is deployed to Heroku.
