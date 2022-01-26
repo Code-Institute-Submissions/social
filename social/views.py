@@ -11,6 +11,9 @@ from .forms import CommentForm, PostForm
 
 @method_decorator(login_required, name='post')
 class Home(View):
+    """
+    Render 'post add' modal & post feed to users.
+    """
 
     def get(self, request):
         posts = Post.objects.order_by('-post_date')
@@ -61,6 +64,9 @@ class Home(View):
 
 @method_decorator(login_required, name='post')
 class PostView(View):
+    """
+    Render full post view to user & allow viewing and editing of comments.
+    """
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
@@ -99,6 +105,9 @@ class PostView(View):
 
 
 class DeletePost(View):
+    """
+    Delete selected post after asking for user confirmation.
+    """
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
@@ -124,6 +133,9 @@ class DeletePost(View):
 
 
 class DeleteComment(View):
+    """
+    Delete selected comment after asking for user confirmation.
+    """
 
     def get(self, request, slug, comment_id):
         post = Post.objects.get(slug=slug)
@@ -151,6 +163,9 @@ class DeleteComment(View):
 
 
 class EditPost(View):
+    """
+    Edit selected post after asking for user confirmation.
+    """
 
     def get(self, request, slug):
         post = Post.objects.get(slug=slug)
@@ -195,6 +210,9 @@ class EditPost(View):
 
 
 class EditComment(View):
+    """
+    Edit selected comment after asking for user confirmation.
+    """
 
     def get(self, request, slug, comment_id):
         post = Post.objects.get(slug=slug)
