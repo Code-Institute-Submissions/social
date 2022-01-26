@@ -53,7 +53,8 @@ class Home(View):
             post_form = PostForm()
 
             messages.add_message(
-                request, messages.WARNING, 'Something went wrong, please review your post and try again.')
+                request, messages.WARNING, 'Something went wrong, please ' +
+                'review your post and try again.')
 
         return render(request, 'index.html', {
             'page_obj': page_obj,
@@ -199,7 +200,8 @@ class EditPost(View):
             else:
                 post_form = PostForm()
                 messages.add_message(
-                    request, messages.WARNING, 'Something went wrong, please review your post and try again.')
+                    request, messages.WARNING, 'Something went wrong, please' +
+                    ' review your post and try again.')
 
             return render(request, 'edit_post.html', {
                 'post': post,
