@@ -17,9 +17,9 @@ This is a Django-based, data-driven application that supports authentication and
 -   As a Site User I can view a feed of posts so that I can easily read them.
 -   As a Site User I can click on a post so that I can read it in full and view comments.
 -   As a Site User I can view post comments so that I can see what the community is talking about.
--   As a Site User I can view the date a post or comment was made so that I know how recent it is
+-   As a Site User I can view the date a post or comment was made so that I know how recent it is.
 -   As a Site User I can sign up for an account so that I can create and comment on posts.
--   As a Site User I can view a paginated post feed so that I can select which post to view
+-   As a Site User I can view a paginated post feed so that I can select which post to view.
 
 #### Authenticated User
 
