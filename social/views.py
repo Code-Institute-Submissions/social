@@ -116,6 +116,9 @@ class DeletePost(View):
 
         if request.user == post.author:
             post.delete()
+
+            messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+
             return redirect('home')
         else:
             return HttpResponseNotFound('<h1>Page not found.</h1>')
@@ -140,6 +143,8 @@ class DeleteComment(View):
         if request.user == post.author:
             com = Comment.objects.get(id=comment_id)
             com.delete()
+
+            messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
 
             return redirect('post_detail', slug=slug)
         else:
