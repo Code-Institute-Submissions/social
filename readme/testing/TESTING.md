@@ -131,3 +131,11 @@ Tested using Firefox and Chrome across all viewports.
 -   All CRUD operations are functioning as expected. Display correctly on the frontend and registering correctly on the backend.
 -   Comment count is consistent.
 -   Button to collapse navbar functioning correctly. Changes to appropriate icon depending on current navbar collapse status.
+
+## Bugs
+
+A few bugs have been sqaushed during development:
+
+-   Broken link to database due to Heroku change. Set up new link within project.
+-   No word wrap for content, meaning content could overflow its container. Fixed with CSS.
+-   The Bootstrap collapse component would not incorporate into my design. Could not get this resolved with tutor guidance. This seems to be an issue with this version of Bootstrap. This was solved by creating my own implementation using jQuery.
