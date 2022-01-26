@@ -62,6 +62,8 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
 
 ## Features
 
+### Existing Features
+
 -   Create Post
     -   Once authenticated, users are able to create posts to share with the community.
 -   Add Category
@@ -84,8 +86,17 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
     -   Users can modify post content, providing they own the post.
 -   Comment Modification
     -   Users can modify comment content, providing they own the comment.
+-   User Confirmation
+    -   Users are asked at all times to confirm update or delete operations.
+-   User Feedback
+    -   Users
 -   Site Admin Modification
     -   Admin users are able to modify all content on the site to ensure it adheres to guidelines.
+
+### Features to Implement in the Future
+
+-   Social authentication.
+-   Upvotes/downvotes for posts and comments.
 
 ## Technologies
 
