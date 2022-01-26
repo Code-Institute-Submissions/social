@@ -12,19 +12,25 @@ This is a Django-based, data-driven application that supports authentication and
 
 ### User Stories
 
--   As a Site User I can create a post so that I can share it with others.
--   As a Site User I can add a category to my post so that others know what it relates to.
--   As a Site User I can add a comment to posts so that I can engage with the author.
+#### Site User
+
 -   As a Site User I can view a feed of posts so that I can easily read them.
 -   As a Site User I can click on a post so that I can read it in full and view comments.
 -   As a Site User I can view post comments so that I can see what the community is talking about.
--   As a Site User I can sign up for an account so that I can create and comment on posts.
 -   As a Site User I can view the date a post or comment was made so that I know how recent it is
+-   As a Site User I can sign up for an account so that I can create and comment on posts.
 -   As a Site User I can view a paginated post feed so that I can select which post to view
+
+#### Authenticated User
+
+-   As a Site User I can create a post so that I can share it with others.
+-   As a Site User I can add a category to my post so that others know what it relates to.
+-   As a Site User I can add a comment to posts so that I can engage with the author.
 -   As a Site User I can modify my posts so I can correct any errors made.
 -   As a Site User I can modify my comments so I can correct any errors made.
--   As a Site User I can upvote a post so that I can interact with the poster
--   As a Site User I can view post like count so that I can see how popular it is
+
+#### Site Admin
+
 -   As a Site Admin I can manage users' posts so that I can remove posts that break site policy.
 
 ### Database Schema / Models
@@ -61,7 +67,7 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
 -   Add Category
     -   Users are able to add categories to their posts so others can see what the posts relate to.
 -   Add Comment
-    -   Once authenticated, users are able to leave comments on posted content. 
+    -   Once authenticated, users are able to leave comments on posted content.
 -   View Post Feed
     -   A feed of posts filtered by date is available for users to scroll through.
 -   Post View
@@ -119,7 +125,7 @@ Steps for deployment:
 
 -   Install Django and relevant dependencies.
 -   Create new Django project with appropriate Procfile for Heroku.
--   Run: 
+-   Run:
     ```
     pip freeze --local > requirements.txt
     ```
