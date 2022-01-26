@@ -5,7 +5,7 @@ from django.db.models.fields import DateTimeField
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=20)
 
     class Meta:
         verbose_name_plural = 'categories'
@@ -15,8 +15,8 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts')
