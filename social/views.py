@@ -178,9 +178,14 @@ class EditPost(View):
                 post_new.slug = '-'.join(post_new.title.split())
                 post_new.save()
 
+                messages.add_message(
+                    request, messages.SUCCESS, 'Post updated!')
+
                 return redirect('post_detail', slug=post_new.slug)
             else:
                 post_form = PostForm()
+                messages.add_message(
+                    request, messages.WARNING, 'Something went wrong, please review your post and try again.')
 
             return render(request, 'edit_post.html', {
                 'post': post,
@@ -213,6 +218,8 @@ class EditComment(View):
             comment = Comment.objects.get(id=comment_id)
             comment_form = CommentForm(request.POST, instance=comment)
             comment_form.save()
+
+            messages.add_message(request, messages.SUCCESS, 'Comment updated!')
 
             return redirect('post_detail', slug=slug)
         else:
