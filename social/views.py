@@ -1,4 +1,3 @@
-from email import message
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
