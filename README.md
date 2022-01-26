@@ -121,6 +121,8 @@ The primary colours used in the design are orange (#ff4000), grey (#212529) and 
     -   Used to store the project after pushing to Git.
 -   [Heroku](https://dashboard.heroku.com/login)
     -   Used to host the application.
+-   [Cloudinary](https://cloudinary.com/)
+    -   Cloud service used to host and serve static files.
 -   [Hover.css](https://ianlunn.github.io/Hover/)
     -   Used for navbar animation.
 
