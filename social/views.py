@@ -1,3 +1,4 @@
+from email import message
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
@@ -48,6 +49,7 @@ class Home(View):
                                  'Post added successfully!')
         else:
             post_form = PostForm()
+
             messages.add_message(
                 request, messages.WARNING, 'Something went wrong, please review your post and try again.')
 
@@ -82,8 +84,13 @@ class PostView(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+
+            messages.add_message(request, messages.SUCCESS, 'Comment added!')
         else:
             comment_form = CommentForm()
+
+            messages.add_message(request, messages.WARNING,
+                                 'Something went wrong, please try again.')
 
         return render(request, 'post_view.html', {
             'post': post,
